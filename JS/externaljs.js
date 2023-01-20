@@ -10,7 +10,7 @@ alert("hey, this is " + myName + " talking to you.");
 //can it run an expression
 alert(2+2);
 alert(true && false);
-alert(2+2-5-(5*5);
+alert(2+2-5-(5*5));
 //alert shoots out info to read
 
 //confirm - true or false? (ok & cancel)
