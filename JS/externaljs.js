@@ -3,7 +3,7 @@
 console.log("Hello this is the external JS ");
 
 //alert - how do i first open window to show my user some info?
-alert("This is an alert");
+alert("Welcome to my Website");
 //can also use variables
 var myName = "David";
 alert("hey, this is " + myName + " talking to you.");
@@ -17,8 +17,6 @@ alert(2+2-5-(5*5));
 var likedLunch = confirm("How was your lunch?");
 alert("You told me it was " + likedLunch + " that you liked lunch.");
 //confirm equates user response "ok" to true and "cancel" to false, very hard coded
-
-
 
 //prompt - can you write me something in response to what I asked in window?
 var whatdidYoueat =
