@@ -113,5 +113,3 @@ function applyDiscount(disCount, fullPrice) {
 }
 var finalBill = applyDiscount(.3, 100);
 alert("Your final bill comes to $" + applyDiscount(disCount, fullPrice) + ".  Thanks for shopping with us and we look forward to seeing you back soon!");
-
-
