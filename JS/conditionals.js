@@ -4,19 +4,6 @@ console.log("This is my conditionals exercise!");
 
 /* ########################################################################## */
 
-var shirtColor = prompt("What color shirt would you like to purchase?");
-function analyzeColor(shirtColor) {
-    if (shirtColor === "brown") {
-        alert("That's an awesome color!  It's your lucky day because we have that shirt in that color!");
-    }   else if (shirtColor === "red") {
-        alert("We have that shirt in that color.  Which size would you like?");
-    }   else if (shirtColor === "blue") {
-        alert("You're in luck, but we're down to our last few in that color so you should hurry to secure your order.");
-    }   else {
-        alert("Sorry, we don't have this shirt in that color.  Please try a different color.");
-    }
-}
-analyzeColor(shirtColor)
 /**
  * TODO:
  * Create a function named `analyzeColor` that accepts a string that is a color
@@ -37,6 +24,23 @@ analyzeColor(shirtColor)
  * console.logging the function's return value
  */
 
+function analyzeColor(name) {
+    if(name === "blue") {
+        return name + "is very regal";
+    }   else if (name === "red") {
+        return name + "is a seductive color";
+    }   else {
+        return "I don't know what to say about " + name;
+    }
+}
+analyzeColor(name);
+
+
+
+
+
+
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -50,10 +54,30 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
+console.log(analyzeColor(randomColor));
+
+
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+
+var shirtColor = prompt("What color shirt would you like to purchase?");
+switch(shirtColor) {
+    case "brown" :
+        alert("That's an awesome color!  It's your lucky day because we have that shirt in that color!");
+        break;
+    case "red" :
+        alert("We have that shirt in that color.  Which size would you like?");
+        break;
+    case "blue" :
+        alert("You're in luck, but we're down to our last few in that color so you should hurry to secure your order.");
+        break;
+    default:
+        alert("Sorry, we don't have this shirt in " + shirtColor + ".  Please try a different color.");
+        break;
+}
+
 
 /**
  * TODO:
@@ -61,6 +85,20 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+var shirtColor = prompt("What color shirt would you like to purchase?");
+function analyzeColor(shirtColor) {
+if (shirtColor === "brown") {
+    alert("That's an awesome color!  It's your lucky day because we have that shirt in that color!");
+} else if (shirtColor === "red") {
+    alert("We have that shirt in that color.  Which size would you like?");
+} else if (shirtColor === "blue") {
+    alert("You're in luck, but we're down to our last few in that color so you should hurry to secure your order.");
+} else {
+    alert("Sorry, we don't have this shirt in that color.  Please try a different color.");
+}
+}
+analyzeColor(shirtColor);
 
 /* ########################################################################## */
 
@@ -83,6 +121,29 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+
+var luckyNumber = Math.floor(Math.random() * 6);
+var fullPrice = prompt("How much was your total bill?");
+alert("Your winning number is " + luckyNumber + "!!  Please answer the following question to see your total due.");
+
+console.log(calculateTotal(luckyNumber, fullPrice));
+
+function calculateTotal(luckyNumber, fullPrice) {
+    if (luckyNumber === 0) {
+        return fullPrice;
+    }  else if (luckyNumber === 1) {
+        return fullPrice - (fullPrice * .1);
+    }  else if (luckyNumber === 2) {
+        return fullPrice - (fullPrice * .25);
+    }  else if (luckyNumber === 3) {
+        return fullPrice - (fullPrice * .35);
+    }  else if (luckyNumber === 4) {
+        return fullPrice - (fullPrice * .5);
+    }  else if (luckyNumber === 5) {
+        return "FREE!! Congrats!";
+    }
+}
+
 
 /**
  * TODO:
