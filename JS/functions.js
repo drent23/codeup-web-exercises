@@ -19,6 +19,12 @@ function sayHello(name) {
  *
  * console.log 'helloMessage' to check your work
  */
+// call my function
+// use name as string/input or argument
+// result/return need to end up in var named helloMessage
+// console log at end
+
+sayHello("david");
 
 var helloMessage = sayHello("David");
 
@@ -31,8 +37,13 @@ console.log(helloMessage);
  * console.
  */
 
+// create var named myName
+
 var myName = "David";
-var helloMessage2 = sayHello(myName);
+
+sayHello(myName);
+
+console.log(sayHello(myName));
 
 /**
  * TODO:
@@ -59,6 +70,9 @@ var random = Math.floor((Math.random() * 3) + 1);
 function isTwo(num) {
     return num === 2;
 }
+
+isTwo(3);
+isTwo(random);
 
 console.log(isTwo(random));
 
@@ -112,4 +126,4 @@ function applyDiscount(disCount, fullPrice) {
     return fullPrice - (disCount * fullPrice);
 }
 var finalBill = applyDiscount(.3, 100);
-alert("Your final bill comes to $" + applyDiscount(disCount, fullPrice) + ".  Thanks for shopping with us and we look forward to seeing you back soon!");
+alert("Your final bill comes to $" + finalBill + ".  Thanks for shopping with us and we look forward to seeing you back soon!");
