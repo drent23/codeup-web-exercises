@@ -39,8 +39,6 @@ analyzeColor(name);
 
 
 
-
-
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -86,8 +84,7 @@ switch(shirtColor) {
  * function to show it to the user.
  */
 
-var shirtColor = prompt("What color shirt would you like to purchase?");
-function analyzeColor(shirtColor) {
+analyzeColor(shirtColor);
 if (shirtColor === "brown") {
     alert("That's an awesome color!  It's your lucky day because we have that shirt in that color!");
 } else if (shirtColor === "red") {
@@ -97,7 +94,7 @@ if (shirtColor === "brown") {
 } else {
     alert("Sorry, we don't have this shirt in that color.  Please try a different color.");
 }
-}
+
 analyzeColor(shirtColor);
 
 /* ########################################################################## */
@@ -123,26 +120,27 @@ analyzeColor(shirtColor);
  */
 
 var luckyNumber = Math.floor(Math.random() * 6);
-var fullPrice = prompt("How much was your total bill?");
+var totalBill = x;
+
 alert("Your winning number is " + luckyNumber + "!!  Please answer the following question to see your total due.");
 
 console.log(calculateTotal(luckyNumber, fullPrice));
 
-function calculateTotal(luckyNumber, fullPrice) {
-    if (luckyNumber === 0) {
-        return fullPrice;
-    }  else if (luckyNumber === 1) {
-        return fullPrice - (fullPrice * .1);
-    }  else if (luckyNumber === 2) {
-        return fullPrice - (fullPrice * .25);
-    }  else if (luckyNumber === 3) {
-        return fullPrice - (fullPrice * .35);
-    }  else if (luckyNumber === 4) {
-        return fullPrice - (fullPrice * .5);
-    }  else if (luckyNumber === 5) {
-        return "FREE!! Congrats!";
-    }
+calculateTotal(luckyNumber, totalBill);
+if (luckyNumber === 0) {
+    return fullPrice;
+}  else if (luckyNumber === 1) {
+    return
+}  else if (luckyNumber === 2) {
+    return fullPrice - (fullPrice * .25);
+}  else if (luckyNumber === 3) {
+    return fullPrice - (fullPrice * .35);
+}  else if (luckyNumber === 4) {
+    return fullPrice - (fullPrice * .5);
+}  else if (luckyNumber === 5) {
+    return "FREE!! Congrats!";
 }
+
 
 
 /**
@@ -154,7 +152,20 @@ function calculateTotal(luckyNumber, fullPrice) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+var totalBill = prompt("What was the amount of your total bill?");
+var winnngNumber = alert("Your lucky number is " + luckyNumber + "!");
+calculateTotal(shirtColor);
+if (shirtColor === "brown") {
+    alert("That's an awesome color!  It's your lucky day because we have that shirt in that color!");
+} else if (shirtColor === "red") {
+    alert("We have that shirt in that color.  Which size would you like?");
+} else if (shirtColor === "blue") {
+    alert("You're in luck, but we're down to our last few in that color so you should hurry to secure your order.");
+} else {
+    alert("Sorry, we don't have this shirt in that color.  Please try a different color.");
+}
+
 
 /**
  * TODO:
