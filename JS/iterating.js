@@ -52,3 +52,13 @@ names.forEach(function(name) {
      */
 
 })();
+
+function first(x) {
+    return x[0];
+}
+function second(x) {
+    return x[1];
+}
+function last(x) {
+    return x[x.length - 1];
+}
