@@ -16,16 +16,16 @@
      * TODO:
      * Create a string with <br> tags between each planet. console.log() your
      * results. Why might this be useful?
-     *
-     * BONUS:
+     */
+    planetsString = planetsArray.join('<br>');
+    console.log(planetsString);
+
+    /** BONUS:
      * Create another string that would display your planets in an undordered
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
-planetsString = planetsArray.join('<br>');
-console.log(planetsString);
-
-planetsArray.forEach(function(planet) {
+    planetsArray.forEach(function(planet) {
     if([0]) {
         console.log("<ul><li> " + planet + " <li>");
     } else if(planet > [0] && planet < [7]) {
@@ -34,6 +34,10 @@ planetsArray.forEach(function(planet) {
         console.log("<ul>");
     }
 });
+    var newString = "<ul>" + "<li>" +planetsArray.join("</li><li>")+ "</li>" + "</ul>";
+    console.log(newString);
+
+
 })();
 
 
