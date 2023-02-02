@@ -12,7 +12,6 @@
     myCar.sound = soundSystem;
     console.log(myCar);
 
-
     /**
      * TODO:
      * Create an object with firstName and lastName properties that are strings
@@ -23,6 +22,10 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+    var person = {firstName: "David", lastName: "Renteria"};
+    console.log(person);
+    console.log(person.firstName);
+    console.log(person.lastName);
 
     /**
      * TODO:
@@ -33,6 +36,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    person.sayHello = function() {
+        return "Hello " + person.firstName + " " + person.lastName;
+    }
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -47,12 +54,33 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
+    // if(amount > 200) {
+        // console.log("Name, amount, & amount after discount")
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    shoppers.forEach(function(shopper) {
+        var finalBill = shopper.amount - (shopper.amount * .12);
+        if (shopper.amount > 200) {
+            console.log(shopper.name + ", you spent " + shopper.amount + ".  Your balance due is " + finalBill.toFixed(2));
+        } else {
+            console.log(shopper.name + ", you spent " + shopper.amount + ". Your balnce due is " + shopper.amount);
+        }
+    })
+
+    // shoppers.forEach(function (hebOffer) {
+    //     hebOffer.shoppers.forEach(function(shopper, index) {
+    //         if (index > 200) {
+    //             console.log(name + ", you spent " + index + ".  Your balance due is " + index - (index * .12));
+    //         } else {
+    //             console.log(name + ", you spent " + index + ".  Your balance due is " + index);
+    //         }
+    //     })
+    // })
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
