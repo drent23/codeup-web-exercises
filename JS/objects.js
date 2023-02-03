@@ -24,8 +24,6 @@
      */
     var person = {firstName: "David", lastName: "Renteria"};
     console.log(person);
-    console.log(person.firstName);
-    console.log(person.lastName);
 
     /**
      * TODO:
@@ -54,8 +52,6 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-    // if(amount > 200) {
-        // console.log("Name, amount, & amount after discount")
 
     var shoppers = [
         {name: 'Cameron', amount: 180},
@@ -68,11 +64,12 @@
             if (shopper.amount > 200) {
                 console.log(shopper.name + ", you spent over $200, you get a 12% discount today.  Your balance due is " + (shopper.amount * .88).toFixed(2));
             } else {
-                console.log(shopper.name + ", spending $200 qualifies would qualify you for a 12% discount. Your balance due is " + shopper.amount);
+                console.log(shopper.name + ", spending $200 would qualify you for a 12% discount. Your balance due is " + shopper.amount);
             }
+            console.log(spendMore());
             console.log("_________________________");
         })
-
+    }
 
         /** TODO:
          * Create an array of objects that represent books and store it in a
@@ -139,11 +136,8 @@
         return {title: title, author: {firstName: authorFirst, lastName: authorLast}};
     }
 
-    var bookTitle = prompt("Please enter the title of the book.");
-    var authorFname = prompt("Please enter the author's first name.");
-    var authorLname = prompt("Please enter the author's last name.");
 
-    console.log(createBook(bookTitle, authorFname, authorLname));
+    console.log(createBook("Grapes of Wrath", "John", "Steinbeck"));
 
         var booksPart2 = [
             createBook('Between the World and Me', 'Ta-Nehisi', 'Coates'),
@@ -152,6 +146,13 @@
             createBook('Thinkertoys', 'Michael', 'Michalko'),
             createBook('The 21 Irrefutable Laws of Leadership', 'John', 'Maxwell'),
             createBook("You're Broke Because You Want to Be", 'Larry', 'Winget')];
+
+        var bookTitle = prompt("Please enter the title of the book.");
+        var authorFname = prompt("Please enter the author's first name.");
+        var authorLname = prompt("Please enter the author's last name.");
+
+        booksPart2.push(createBook(bookTitle, authorFname, authorLname));
+
         function showBookinfo(book) {
             console.log("Title: " + book.title);
             console.log("Author: " + book.author.firstName + "" + book.author.lastName);
@@ -162,6 +163,5 @@
             console.log("Book # " + (index +1));
             showBookinfo(book);
         })
-    }
 
 })()
