@@ -37,7 +37,7 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
     person.sayHello = function() {
-        return "Hello " + person.firstName + " " + person.lastName;
+        return "Hello from " + this.firstName + " " + this.lastName;
     }
     console.log(person.sayHello());
 
@@ -95,6 +95,17 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books = [
+        {title: 'Between the World and Me', author: {firstName: 'Ta-Nehisi', lastName: 'Coates'}},
+        {title: 'Rich Dad Poor Dad', author: {firstName: 'Robert', lastName: 'Kiyosaki'}},
+        {title: 'Who Moved My Cheese', author: {firstName: 'Spencer', lastName: 'Johnson'}},
+        {title: 'Thinkertoys', author: {firstName: 'Michael', lastName: 'Michalko'}},
+        {title: 'The 21 Irrefutable Laws of Leadership', author: {firstName: 'John', lastName: 'Maxwell'}},
+        {title: "You're Broke Because You Want to Be", author: {firstName: 'Larry', lastName: 'Winget'}},
+    ];
+    console.log(books[2].title);
+    console.log(books[3].author.firstName);
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -119,6 +130,10 @@
      *      ---
      *      ...
      */
+
+    books.forEach((function(book, index, array) {
+        console.log("Book # " +books.length - 1+ "Title: " +book);
+    }))
 
     /**
      * Bonus:
