@@ -6,29 +6,44 @@
 </head>
 <body>
 
-<form method="GET" action="https://requestinspector.com/inspect/01grph307256eejebnckc6kfyb">
+<form method="POST" action="https://requestinspector.com/inspect/01grph307256eejebnckc6kfyb">
 
+    <h1 style="text-align: center">Registration Page</h1>
     <label for="email">Email</label>
     <input id="email" name="email" type="text" placeholder="Enter your email address">
+    <input type="hidden" name="username" value="email">
+    <br><br>
+
     <label for="password">Password</label>
     <input id="password" name="password" type="password" placeholder="Enter your password">
-    <br>
+    <br><br>
+
     <label for="bio">Bio</label>
     <input id="bio" name="bio" type="textarea" placeholder="Please tell us a little about yourself">
+    <br><br>
+
+    <h4>How did you hear about us?</h4>
+    <label for="Billboard">
+        Billboard <input id="Billboard" type="radio" name="how did you hear" value="Billboard"></label><br>
+    <label for="Radio">
+        Radio <input id="Radio" type="radio" name="how did you hear" value="Radio"></label><br>
+    <label for="Internet">
+        Internet <input id="Internet" type="radio" name="how did you hear" value="Internet"></label><br>
+    <label for="Other">
+        Other <input id="Other" type="radio" name="how did you hear" value="Other"></label><br>
+    <br>
     <br>
 
-    <select name="How did you hear about us?">
-        <option value="billboard">Billboard</option>
-        <option value="radio">Radio</option>
-        <option value="Internet">Internet</option>
+    <h4>What web browser are you currently using?</h4>
+    <select name="What web browser are you using?">
+        <option value="Edge">Edge</option>
+        <option value="Chrome">Chrome</option>
+        <option value="Firefox">Firefox</option>
+        <option value="Safari">Safari</option>
         <option value="Other">Other</option>
     </select>
-
-
-    <input type="submit">
-  <button type="submit">Search</button>
+    <br><br><br><br>
+    <button type="submit" style="text-align: left">Submit Form</button>
 </form>
-
-
 </body>
 </html>
