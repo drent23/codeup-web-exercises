@@ -17,10 +17,21 @@ body {
     text-decoration: underline;
     text-align: center;
 }
+div.container {
+    text-align: center;
+}
 
-ol {list-style: upper-roman;}
+ol.lists {
+    display: inline-block;
+    text-align: center;
+    list-style: upper-roman;
+}
 
-ul {list-style-type: disc;}
+ul.lists {
+    display: inline-block;
+    text-align: center;
+    list-style: upper-roman;
+}
 
 table {
     table-layout: auto;
