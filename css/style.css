@@ -1,8 +1,63 @@
 /*
 this file is named "site.css" and is in a directory named "css"
 */
+body {
+    background-color: #6495ed;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(202, 184, 0, 3),
+        rgba(1, 1, 199, 3));
+    background-position: 2px 0px;
+    background-size: 40px;
+    font-family: "Droid Serif", "Microsoft Sans Serif", "Apple SD Gothic Neo", a;
+}
 
 .fancy-header {
-    color: purple;
+    color: #556b2f;
     text-decoration: underline;
+    text-align: center;
+}
+
+ol {list-style: upper-roman;}
+
+ul {list-style-type: disc;}
+
+table {
+    table-layout: auto;
+    border: 15px #FFFFFF;
+    color: #FFFFFF;
+    font-size: xxx-large;
+    text-align: center;
+}
+
+th {
+    border: 10px solid #000000;
+    padding: 5px;
+
+}
+tr {
+    border: 5px solid #000000;
+    padding: 5px;
+
+}
+
+td {
+    border: 5px solid #FFFFFF;
+    padding: 10px;
+}
+
+a:link {
+    color:#0000FF;
+}
+
+a:visited {
+    color:#800080;
+}
+
+a:hover {
+    color:#FF0000;
+}
+
+a:active {
+    color:#00FF00;
 }
