@@ -5,3 +5,25 @@ body, html {
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
+
+div {;
+    margin: .5em;
+    padding: .5em;
+}
+
+var bg_info = blue
+.message-info {;
+
+}
+
+.message-success {
+
+}
+
+.message-warning {
+
+}
+
+.message-error {
+
+}
