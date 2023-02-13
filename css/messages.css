@@ -1,0 +1,29 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+div {;
+    margin: .5em;
+    padding: .5em;
+}
+
+var bg_info = blue
+.message-info {;
+
+}
+
+.message-success {
+
+}
+
+.message-warning {
+
+}
+
+.message-error {
+
+}
