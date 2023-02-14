@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    box-sizing: border-box;
+}
+.top-nav {
+    border: 3px solid red;
+    display: flex;
+    justify-content: space-between;
+}
+nav {
+    background: #808080;
+}
+nav a {
+    text-decoration: none;
+    color: #000000;
+    /*font-family: "Montserrat";*/
+    display: inline-block; /* inline-block to increase clickable area beyond the text */
+    padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
+}
+nav a:hover {
+    background: #0000FF;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center/* made unordered list a flex container */
+}
+.logo-div {
+    text-align: center;
+    font-size: 1em;
+    font-weight: lighter;
+    padding: .2em;
+    display: flex;
+}
+.icons {
+    display: flex;
+    align-items: center;
+}
+
