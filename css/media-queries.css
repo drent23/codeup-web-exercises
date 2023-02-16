@@ -1,100 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@0;1&display=swap');
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 1em;
+    max-width: 960px;
+    font-family: "Ubuntu", sans-serif;
 }
 .alert-info {
-    margin: .5em auto;
-    padding: .5em;
-    width: 95%;
-    /*height: 5%;*/
-    background-color: aquamarine;
+    padding: .5em 0;
+    background: aquamarine;
     border: 3px solid lightgrey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 .alert-info a {
     text-decoration: none;
-    text-align: center;
     color: #000000;
 }
 h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    font-size: 3em;
 }
-ul {
-    list-style: none;
+.nav-links {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex-grow: 2;
+    list-style: none;
+    padding: 0;
 }
-li {
-    width: 95%;
-    margin: .5em;
-    padding: .5em;
+.nav-links li {
+    margin: .5em 0;
+    padding: .5em 0;
     text-align: center;
-    background-color: lightgrey;
-}
-.header-img {
-    display: flex;
-    justify-content: center;
+    background: lightgrey;
 }
 img {
-    width: 95%;
-    height: auto;
+    width: 100%;
+    height: 229px;
+    object-fit: cover;
 }
-section {
-    width: 339px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+.main {
+    margin-bottom: 2em;
 }
-p {
+.sub-section {
+    font-style: italic;
+}
+h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+footer {
+    margin-top: 5em;
     display: flex;
-    flex-direction: column-reverse;
     align-items: center;
+    justify-content: space-between;
 }
-@media screen and (min-width: 890px) {
+#social-media-links > a {
+    font-size: 1em;
+    margin: 0 5px;
+}
+@media screen and (min-width: 992px) {
     .alert-info {
         display: none;
     }
     h1 {
-        display: flex;
-        justify-content: flex-start;
+        text-align: left;
+        display: inline;
     }
-    ul {
-        list-style: none;
-        width: 50%;
-        display: flex;
+    nav {
+        float: right;
+    }
+    .nav-links {
+        display: inline-flex;
         flex-direction: row;
-        justify-content: flex-end;
-        flex-basis: 50%;
     }
-    li {
-        width: 95%;
-        margin: .5em;
-        padding: .5em;
-        text-align: center;
-        background-color: #FFFFFF;
+    .nav-links li {
+        background: none;
+        margin: 0 .5em;
     }
     img {
-        width: 95%;
-        height: auto;
+        width: 100%;
+        height: 500px;
     }
     .main {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
+        display: inline-block;
+        width: calc(70% - 1em);
+        margin-right: 1em;
     }
     .sub-section {
-        display: flex;
-        justify-content: flex-end;
+        display: inline-block;
+        width: calc(30% - 1em);
+    }
+    footer {
+        margin-top: 10em;
     }
 }
 
