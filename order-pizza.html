@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,54 +14,55 @@
 </head>
 <body>
 <!-- Main page content -->
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <div class="container-fluid">
-    <a href="#" class="navbar-brand">Pizza World</a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav d-flex align-items-center">
-          <li class="nav-item active">
-            <a href="#" class="nav-link active">Order Online</a>
-          </li>
-          <li class="nav-item active">
-            <a href="#" class="nav-link"> Menu</a>
-          </li>
-        </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Zip Code" aria-label="Search">
-        <button class="btn btn-outline-primary text-nowrap" type="submit">Search stores near you!</button>
-      </form>
-          <div class="nav-item active">
-            <a href="#" class="nav-link d-line-block position-absolute top-0 end-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-            </svg>Sign Up!</a>
-          </div>
-    </div>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a href="#" class="navbar-brand">Pizza World</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav d-flex">
+        <li class="nav-item active">
+          <a href="#" class="nav-link">Order Online</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"> Menu</a>
+        </li>
+        <form class="d-flex">
+          <input class="form-control" type="search" placeholder="Zip Code" aria-label="Search">
+          <button class="btn btn-outline-primary  text-nowrap" type="submit">Search stores near you!</button>
+        </form>
+        <li>
+          <a href="#" class="nav-link d-line-block position-absolute top-0 end-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+          </svg>Sign Up!</a>
+        </li>
+      </ul>
   </div>
 </nav>
-<main>
-  <div class="jumbotron d-none d-lg-block">
-    <div class="position-absolute top-50 start-0 bg-light opacity-25">Welcome to Pizza World</div>
+<main class="container">
+  <div class="jumbotron mt-2 d-none d-lg-block">
+    <div class="h1 text-center bg-light opacity-75">Welcome to Pizza World!</div>
   </div>
-  <div class="container"></div>
   <h2>Build your own pizza!</h2>
-  <nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-            type="button" role="tab" aria-controls="nav-home" aria-selected="true">
-      <span
-              class="badge rounded-pill bg-secondary me-2">1</span>Size and Crust</button>
-    </button>
-    <button class="nav-item">
-      <span
-              class="badge rounded-pill bg-secondary me-2">1</span>Size and Crust</button>
-    </button>
-    <button class="nav-item">
-      <span
-              class="badge rounded-pill bg-secondary me-2">1</span>Size and Crust</button>
-    </button>
+  <ul class="nav nav-tabs" id="nav-tab" role="tablist">
+    <li class="nav-item" role="nav-presentation"></li>
+      <button class="nav-link active" id="sandc-tab" data-bs-toggle="tab" data-bs-target="#sandc" type="button" role="tab" aria-controls="sandc" aria-selected="true">
+        <span class="badge rounded-pill bg-secondary me-2">1</span>Size and Crust</button>
+    </li>
+    <li class="nav-item" role="nav-presentation"></li>
+    <button class="nav-link active" id="cands-tab" data-bs-toggle="tab" data-bs-target="#cands" type="button" role="tab" aria-controls="cands" aria-selected="false">
+      <span class="badge rounded-pill bg-secondary me-2">2</span>Cheese and Sauce</button>
+    </li>
+    <li class="nav-item" role="nav-presentation"></li>
+    <button class="nav-link active" id="topps-tab" data-bs-toggle="tab" data-bs-target="#topps" type="button" role="tab" aria-controls="topps" aria-selected="false">
+      <span class="badge rounded-pill bg-secondary me-2">3</span>Toppings</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="sandc" role="tabpanel" aria-labelledby="sandc-tab"></div>
+    <div class="tab-pane fade" id="cands" role="tabpanel" aria-labelledby="cands-tab"></div>
+    <div class="tab-pane fade" id="topps" role="tabpanel" aria-labelledby="topps-tab"></div>
   </div>
-  </nav>
-
 </main>
 <!-- Optional JavaScript; choose one of the two! -->
 
