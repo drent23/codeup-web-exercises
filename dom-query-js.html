@@ -25,17 +25,23 @@
   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
   culpa qui officia deserunt mollit anim id est laborum.
 </p>
-
+<button id="mainHeading">MH Button</button>
+<button id="subHeading">SH Button</button>
+<button id="liColors">LI Button</button>
+<button id="subPara">P Button</button>
 <script>
   (function() {
     "use strict";
     // TODO: Uncomment next line and get the main header element by id
     var mainHeader = document.getElementById("main-header");
-    console.log(mainHeader);
 
     // TODO: Set inner html of mainHeader to "JavaScript is Cool"
     mainHeader.innerHTML = "Javascript is Cool";
-    console.log(mainHeader.innerHTML);
+    var listenerOne = function () {
+      mainHeader.innerHTML = "JS is cool!";
+    }
+    document.getElementById("mainHeading").addEventListener("click", listenerOne);
+
 
     // TODO: Uncomment the next line and get the sub header element by id
     var subHeader = document.getElementById("sub-header");
@@ -43,6 +49,10 @@
 
     // TODO: Set the text color of subHeader to blue
     subHeader.style.color = "#00F";
+    var listenerTwo = function () {
+      subHeader.style.color = "yellow";
+    }
+    document.getElementById("subHeading").addEventListener("click", listenerTwo);
 
     // TODO: Uncomment the next line and get all list items
     var listItems = document.getElementsByTagName("li");
@@ -58,9 +68,15 @@
         listItems[i].style.color = "#00F"
       }
     }
+    var listenerThree = function () {
+      for (var i = 0; i < listItems.length; i++) {
+        if(i % 2 == 0) {
+          listItems[i].style.color = "orange";
+        }
+      }
+    }
+    document.getElementById("liColors").addEventListener("click", listenerThree);
 
-    // if(i % 2 == 0) {
-    // listItems[i].style.color = "gray"
 
 
 
@@ -70,6 +86,11 @@
 
     // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
     subParagraphs[0].innerHTML = "Mission Accomplished!";
+    var listenerFour = function () {
+      subParagraphs[0].innerHTML = "Done Deal!";
+    }
+    document.getElementById("subPara").addEventListener("click", listenerFour);
+
   })();
 </script>
 </body>
