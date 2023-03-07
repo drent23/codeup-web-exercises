@@ -41,6 +41,20 @@
     $('h1, p, li').css('background-color', 'yellow');
     var headingAlert = $('h1').html();
     alert(headingAlert);
+    $('h1').click(function (e) {
+        $(this).css('background-color', '#F8E3B6');
+    });
+    $('p').dblclick(function(e) {
+        $(this).css('font-size', '18px');
+    });
+    $('li').hover(
+        function(e) {
+            $(this).css('color', '#F00');
+        },
+        function(e) {
+            $(this).css('color', '#000');
+        }
+    );
 </script>
 </body>
 </html>
