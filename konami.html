@@ -21,13 +21,14 @@
           console.log(userInput);
           if(userInput === thirtyLives) {
             alert("Congratulations!  You've earned 30 additional lives!!")
+            $('body').css('background-color', "#F31879");
+            $('h1').css('color', '#378249');
     }
     });
     var btnReset = document.querySelector('#pwReset')
     var clearInput = document.querySelector('#pwInput');
     btnReset.addEventListener('click', () => {
       clearInput.value = '';
-
       userInput = '';
     })
   </script>
