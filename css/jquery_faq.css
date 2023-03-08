@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    box-sizing: border-box;
+    background-color: #F8F2F7;
+
+}
+h1 {
+    text-align: center;
+}
+.invisible {
+    visibility: hidden;
+}
