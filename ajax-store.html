@@ -32,32 +32,7 @@
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="js/ajax_store.js"></script>
 
-<script>
-  (function() {
-    "use strict";
-    // TODO: Create an AJAX GET request for the file under data/inventory.json
-  $.ajax('data/inventory.json').done(function(data) {
-    console.log(data);
-    console.log('it worked')
-  })
-    // TODO: Take the data from inventory.json and append it to the products table
-    $.ajax('data/inventory.json').done(function(data) {
-      let toolStoreHTML = '';
-      data.forEach(function (tool) {
-        toolStoreHTML += '<tr><td>' + tool.title + '</td>';
-        toolStoreHTML += '<td>' + tool.quantity + '</td>';
-        toolStoreHTML += '<td>' + tool.price + '</td>';
-        toolStoreHTML += '<td>' + tool.categories + '</td></tr>';
-        console.log(tool);
-      })
-      $('#insertProducts').append(toolStoreHTML);
-    })
-    $('#refreshTools').click(function(e) {
-        e.preventDefault();
-        $('#insertProducts').html();
-      })
-  })();
-</script>
 </body>
 </html>
