@@ -4,7 +4,7 @@
     $.ajax('data/inventory.json').done(function(data) {
     console.log(data);
     console.log('it worked')
-})
+    })
     // TODO: Take the data from inventory.json and append it to the products table
     $.ajax('data/inventory.json').done(function(data) {
     let toolStoreHTML = '';
@@ -14,11 +14,11 @@
     toolStoreHTML += '<td>' + tool.price + '</td>';
     toolStoreHTML += '<td>' + tool.categories + '</td></tr>';
     console.log(tool);
-})
+    })
     $('#insertProducts').append(toolStoreHTML);
-})
+    })
     $('#refreshTools').click(function(e) {
     e.preventDefault();
     $('#insertProducts').html();
-})
+    })
 })();
