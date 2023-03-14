@@ -24,12 +24,24 @@
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'>
-  <select name="zoom_preference">
-    <option value="5">5X</option>
-    <option value="15">15X</option>
-    <option value="20">20X</option>
-  </select>
+<!--  <input id="userSearch" type="text" placeholder="Enter address here">-->
+<!--  <button id="searchBtn">Search</button>-->
+<!--  <label for="zoomSelect">Zoom Level</label>-->
+<!--  <select id="zoomSelect" name="zoom_preference">Zoom Level-->
+<!--    <option value="5">5X</option>-->
+<!--    <option value="15">15X</option>-->
+<!--    <option value="20">20X</option>-->
+<!--  </select>-->
 </div>
+
+<input id="userSearch" type="text" placeholder="Enter address here">
+<button id="searchBtn">Search</button>
+<label for="zoomSelect">Zoom Level</label>
+<select id="zoomSelect" name="zoom_preference">Zoom Level
+  <option value="5">5X</option>
+  <option value="15">15X</option>
+  <option value="20">20X</option>
+</select>
 
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -39,6 +51,8 @@
 
 <!-- mapbox utils js -->
 <script src="js/mapbox-geocoder-utils.js"></script>
+
+<!-- custom JS -->
 <script src="js/main_mapbox.js"></script>
 </body>
 </html>
