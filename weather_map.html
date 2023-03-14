@@ -7,16 +7,26 @@
     <title>API Weather Map</title>
   <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Mapbox JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
 </head>
-<body>
+<body class="bg-primary">
     <header class="title">
-        <h1 class="text-center">24 Hour Forecast</h1>
-        <img class="img-fluid w-100" src="https://images.pexels.com/photos/395196/pexels-photo-395196.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <h1 class="text-center text-light">24 Hour Forecast</h1>
     </header>
     <main>
-        <input type="text" placeholder="Enter location here" id="citySearch">
+        <div id='map' style='width: 100%; height: 300px;'></div>
+        <div id="weatherData"></div>
+        <input type="text" placeholder="Enter location here" id="citySearch" class="m-1">
         <button id="searchBtn">Click to get weather report</button>
-        <div id="weather-map"></div>
+        <div class="container">
+            <div class="card text-bg-light m-3" style="max-width: 15rem;">
+                <div class="card-header">hello</div>
+                <div class="card-body">world</div>
+            </div>
+        </div>
     </main>
 
 
