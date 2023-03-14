@@ -1,36 +1,53 @@
-(function() {
-    "use strict";
-    var myToken = "pk.eyJ1IjoiZHJlbnQyMyIsImEiOiJjbGYyeGZyZ3AwaWFzNDRsaWM5dnBnZnFsIn0.LtdHr9STm9h4roAZNfCMrg";
-    mapboxgl.accessToken = myToken;
-    var dallasMap = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v12',
-        zoom: 13,
-        center: [-96.78653, 32.78111] // [lng, lat]
-    });
-    var serSteak = new mapboxgl.Marker()
-    serSteak.setLngLat([-96.82917, 32.79995]);
-    serSteak.addTo(dallasMap);
-    var serPopup = new mapboxgl.Popup()
-    serPopup.setLngLat([-96.82917, 32.79995]);
-    serPopup.setHTML("<span>SER Steak</span>");
-    serSteak.setPopup(serPopup)
+"use strict";
 
-    geocode("Ser Steak Dallas, TX", myToken).then(function(results) {
-        console.log("Geocoding at its finest");
-        console.log(results);
-    })
-    reverseGeocode({lat: 32.79995, lng: -96.82917}, myToken).then(function(results) {
-        console.log("Reverse now yall");
-        console.log(results);
-    })
-    geocode("1 Lincoln Rd, Miami Beach, FL 33139", myToken).then(function(results) {
-        console.log(results);
-        var vacaySpot = new mapboxgl.Marker();
-        vacaySpot.setLngLat(results);
-        vacaySpot.addTo(dallasMap);
-        var optionsObj = {center: results, zoom: 15};
-        dallasMap.flyTo(optionsObj);
-        console.log(optionsObj);
-    })
-})();
+/***
+ * geocode is a method to search for coordinates based on a physical address and return
+ * @param {string} search is the address to search for the geocoded coordinates
+ * @param {string} token is your API token for MapBox
+ * @returns {Promise} a promise containing the latitude and longitude as a two element array
+ *
+ * EXAMPLE:
+ *
+ *  geocode("San Antonio", API_TOKEN_HERE).then(function(results) {
+ *      // do something with results
+ *  })
+ *
+ */
+function geocode(search, token) {
+    var baseUrl = 'https://api.mapbox.com';
+    var endPoint = '/geocoding/v5/mapbox.places/';
+    return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+        .then(function(res) {
+            return res.json();
+            // to get all the data from the request, comment out the following three lines...
+        }).then(function(data) {
+            return data.features[0].center;
+        });
+}
+
+
+/***
+ * reverseGeocode is a method to search for a physical address based on inputted coordinates
+ * @param {object} coordinates is an object with properties "lat" and "lng" for latitude and longitude
+ * @param {string} token is your API token for MapBox
+ * @returns {Promise} a promise containing the string of the closest matching location to the coordinates provided
+ *
+ * EXAMPLE:
+ *
+ *  reverseGeocode({lat: 32.77, lng: -96.79}, API_TOKEN_HERE).then(function(results) {
+ *      // do something with results
+ *  })
+ *
+ */
+function reverseGeocode(coordinates, token) {
+    var baseUrl = 'https://api.mapbox.com';
+    var endPoint = '/geocoding/v5/mapbox.places/';
+    return fetch(baseUrl + endPoint + coordinates.lng + "," + coordinates.lat + '.json' + "?" + 'access_token=' + token)
+        .then(function(res) {
+            return res.json();
+        })
+        // to get all the data from the request, comment out the following three lines...
+        .then(function(data) {
+            return data.features[0].place_name;
+        });
+}
