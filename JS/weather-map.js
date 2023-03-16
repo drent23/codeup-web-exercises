@@ -7,21 +7,30 @@
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
-        center: [-74.5, 40], // starting position [lng, lat]
-        zoom: 9, // starting zoom
+        center: [0, 0], // starting position [lng, lat]
+        zoom: 0, // starting zoom
     });
-    map.addControl(new mapboxgl.GeolocateControl({
-        positionOptions:{
+
+    const nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'top-right');
+
+    // Initialize the geolocate control.
+    var geolocate = new mapboxgl.GeolocateControl({
+        positionOptions: {
             enableHighAccuracy: true
         },
-        trackUserLocation: true,
-        showUserHeading: true
-    }));
+        trackUserLocation: true
+    });
+// Add the control to the map.
+    map.addControl(geolocate);
+    map.on('load', () => {
+        geolocate.trigger();
+    });
 
     //marker
 
     let weatherMarker = new mapboxgl.Marker({draggable: true})
-        .setLngLat([-74.5, 40])
+        .setLngLat([0, 0])
         .addTo(map);
     console.log(weatherMarker);
      function onDragEnd() {
@@ -50,8 +59,9 @@
      function weatherData(results) {
          $.get(`https://api.openweathermap.org/data/2.5/weather?lat=${results[1]}&lon=${results[0]}&appid=${weatherKey}&units=imperial`).done(function (data) {
              let html = "";
-             html += `<h6>Date: ${dateConversion(data.dt)}</h6>`;
+             html += `<h2>Date: ${dateConversion(data.dt)}</h2>`;
              html += `<h6>City: ${data.name}</h6>`;
+             html += `<div><img src="https://openweathermap.org/img/w/`+data.weather[0].icon+`.png"></div>`;
              html += `<h6>Weather: ${data.weather[0].description}</h6>`;
              html += `<h6>Wind speed: ${parseInt(data.wind.speed)} knots</h6>`;
              html += `<h6>Temp: ${parseInt(data.main.temp)} &deg;</h6>`;
@@ -68,6 +78,7 @@
             for (let i = 1; i < 6; i++) {
                 const newDate = new Date(data.daily[i].dt * 1000);
                 html += `<h2>Date: ${newDate.toDateString()}</h2>`;
+                html += `<div><img src="https://openweathermap.org/img/w/`+data.daily[i].weather[0].icon+`.png"></div>`;
                 html += `<h6>Weather: ${data.daily[i].weather[0].description}</h6>`;
                 html += `<h6>Temp: ${data.daily[i].temp.day} &deg;</h6>`;
                 html += `<h6>Humidity: ${data.daily[i].humidity}</h6>`;
