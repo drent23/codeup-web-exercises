@@ -17,6 +17,8 @@
       console.log(lngLat);
       weatherData(arrWeather)
          weatherForecast(arrWeather)
+         fiveDayForecast(arrWeather)
+
      }
      weatherMarker.on(`dragend`, onDragEnd);
      function getLocation(searchString) {
@@ -24,7 +26,8 @@
              weatherMarker.setLngLat(results);
              map.flyTo({center: results, zoom: 9});
              weatherData(results);
-             weatherForecast(results);
+             // weatherForecast(results);
+             fiveDayForecast(results);
                   })
              };
      function weatherData(results) {
@@ -39,35 +42,28 @@
              $("#currentCard").html(html);
          })
      };
-var fiveDays = [
-    {data.list: 'i', }
-]
-    function weatherForecast(results) {
-        $.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${results[1]}&lon=${results[0]}&exclude=current,minutely,hourly&appid=${weatherKey}&units=imperial`).done(function (data) {
-            let fiveDayHTML = "";
-            for (var i = 1; 0 < i <= 5; i++) {
-                fiveDayHTML += `<h6>Date: ${dateConversion(data.list.[i].dt)}</h6>`;
-                fiveDayHTML += `<h6>Weather: ${data.list.weather[i].description}</h6>`;
-                fiveDayHTML += `<h6>Temp: Low of ${parseInt(data.list[i].main.temp_min)} and  high of ${parseInt(data.list[i].main.temp_max)} &deg;</h6>`;
+    // function weatherForecast(results) {
+    //     $.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${results[1]}&lon=${results[0]}&exclude=current,minutely,hourly&appid=${weatherKey}&units=imperial`).done(function (data) {
+    //         let html = '';
+            // // for(function () {
+
+            // })
+            $('#searchBtn').click(function (e) {
+                e.preventDefault();
+                getLocation($('#citySearch').val());
+            });
+            let dateConversion = function (timeStamp) {
+                let date = new Date(timeStamp * 1000).toLocaleString("en-US", {
+                    weekday: "short",
+                    month: "short",
+                    day: "numeric",
+                });
+                return date;
             }
-            return fiveDayHTML;
-        })
-        return fiveDayHTML;
-    }
-    $('#searchBtn').click(function (e){
-        e.preventDefault();
-        getLocation($('#citySearch').val());
-    });
-    let dateConversion = function(timeStamp) {
-        let date = new Date(timeStamp * 1000).toLocaleString("en-US", {
-            weekday: "short",
-            month: "short",
-            day: "numeric",
-        });
-        return date;
-    }
-    var forecast = document.querySelector('#cardGroup');
-    forecast.innerHTML = weatherForecast(fiveDays);
+        // })
+    //     var forecast = document.querySelector('#cardGroup');
+    //     forecast.innerHTML = weatherForecast(fiveDays);
+    // }
 })();
 // let gotPosition = function(pos) {
 //     let lat = pos.coords.latitude;
@@ -149,3 +145,25 @@ var fiveDays = [
 //     return hours + ":" + minutes;
 // }
 // navigator.geolocation.getCurrentPosition(gotPosition);
+function fiveDayForecast(results) {
+    $.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${results[1]}&lon=${results[0]}&exclude=current,minutely,hourly&appid=${weatherKey}&units=imperial`).done(function(data){
+        const fiveDays = [];
+        let html = '';
+        for (let i = 1; i < 5; i++) {
+            const newDate = new Date(data.daily[i].dt * 1000);
+            const newDay = {
+                date: newDate.toDateString(),
+                temp: data.daily[i].temp.day,
+                humidity: data.daily[i].humidity,
+                condition: data.daily[i].weather.description
+            };
+            html += `<h6>Date: ${newDate.toDateString()}</h6>`;
+            html += `<h6>Weather: ${data.daily[i].weather.description}</h6>`;
+            html += `<h6>Temp: ${data.daily[i].temp.day} &deg;</h6>`;
+            html += `<h6>Humidity: ${data.daily[i].humidity}</h6>`;
+        }
+        $('#cardGroup').html(html)
+        // fiveDays.push(newDay);
+        console.log(fiveDays);
+    })
+}
