@@ -8,26 +8,11 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
         center: [-96.45546, 32.91097], // starting position [lng, lat]
-        zoom: 0, // starting zoom
+        zoom: 10, // starting zoom
     });
 
     const nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'top-right');
-
-    // Initialize the geolocate control.
-    var geolocate = new mapboxgl.GeolocateControl({
-        positionOptions: {
-            enableHighAccuracy: true
-        },
-        trackUserLocation: true
-    });
-// Add the control to the map.
-    map.addControl(geolocate);
-    map.on('load', () => {
-        geolocate.trigger();
-    });
-
-    //marker
 
     let weatherMarker = new mapboxgl.Marker({draggable: true})
         .setLngLat([-96.45546, 32.91097])
