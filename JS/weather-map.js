@@ -7,7 +7,7 @@
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
-        center: [0, 0], // starting position [lng, lat]
+        center: [-96.45546, 32.91097], // starting position [lng, lat]
         zoom: 0, // starting zoom
     });
 
@@ -30,7 +30,7 @@
     //marker
 
     let weatherMarker = new mapboxgl.Marker({draggable: true})
-        .setLngLat([0, 0])
+        .setLngLat([-96.45546, 32.91097])
         .addTo(map);
     console.log(weatherMarker);
      function onDragEnd() {
