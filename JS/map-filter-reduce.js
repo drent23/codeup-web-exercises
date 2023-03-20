@@ -48,6 +48,8 @@ let totalExperience = users.reduce((totalYears, user) => (totalYears + user.year
 console.log("total number of years worked equals " + totalExperience)
 console.log(`the avg years per employee is ${totalExperience/users.length}`);
 
+
+
 let whySoLong = users.reduce((address, user) =>{
     console.log(address);
     console.log(user.email);

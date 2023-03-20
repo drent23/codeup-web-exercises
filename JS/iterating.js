@@ -51,14 +51,21 @@ names.forEach(function(name) {
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-})();
 
-function first(x) {
-    return x[0];
-}
-function second(x) {
-    return x[1];
-}
-function last(x) {
-    return x[x.length - 1];
-}
+    function first(arr) {
+        return arr[0];
+    }
+
+    console.log(first([1,2,3,4,5]));
+    function second(arr) {
+        return arr[1];
+    }
+
+    console.log(second([6,7,8,9,10]));
+
+    function last(x) {
+        return x[x.length - 1];
+    }
+
+    console.log(last([7,8,9,10,11,12,13]));
+})();
